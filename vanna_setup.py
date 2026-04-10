@@ -80,26 +80,7 @@ def _build_llm_service():
             api_key=api_key,
         )
 
-    if provider == "groq":
-        from vanna.integrations.openai import OpenAILlmService
-        api_key = os.getenv("GROQ_API_KEY")
-        if not api_key:
-            raise EnvironmentError("GROQ_API_KEY is not set in your .env file.")
-        return OpenAILlmService(
-            model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
-            api_key=api_key,
-            base_url="https://api.groq.com/openai/v1",
-        )
-
-    if provider == "ollama":
-        from vanna.integrations.openai import OpenAILlmService
-        return OpenAILlmService(
-            model=os.getenv("OLLAMA_MODEL", "llama3"),
-            api_key="ollama",
-            base_url="http://localhost:11434/v1",
-        )
-
-    raise ValueError(f"Unknown LLM_PROVIDER='{provider}'. Choose: gemini | groq | ollama")
+    raise ValueError(f"Unknown LLM_PROVIDER='{provider}'. Choose: gemini")
 
 
 # ─── Agent factory ───────────────────────────────────────────────────────────
