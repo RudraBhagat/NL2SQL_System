@@ -2,7 +2,7 @@
 
 ## Overview
 
-Cogninest AI is a Natural Language to SQL chatbot for a clinic dataset. It uses Vanna 2.0, FastAPI, and SQLite so users can ask plain-English questions and receive query results without writing SQL manually.
+Natural Language to SQL chatbot for a clinic dataset. It uses Vanna 2.0, FastAPI, and SQLite so users can ask plain-English questions and receive query results without writing SQL manually.
 
 Typical flow:
 
